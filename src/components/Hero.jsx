@@ -44,34 +44,7 @@ function Hero() {
                 your style, your life.
               </p>
 
-              <button
-                onClick={scrollToDemo}
-                className="group hidden shrink-0 items-center gap-3 border-b border-[var(--luma-dark)] pb-2 text-sm sm:flex"
-              >
-                Design my space
-
-                <ArrowUpRight
-                  size={16}
-                  strokeWidth={1.4}
-                  className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
-                />
-              </button>
-
             </div>
-
-            {/* Mobile CTA */}
-            <button
-              onClick={scrollToDemo}
-              className="group mt-8 flex items-center gap-3 border-b border-[var(--luma-dark)] pb-2 text-sm sm:hidden"
-            >
-              Design my space
-
-              <ArrowUpRight
-                size={16}
-                strokeWidth={1.4}
-                className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
-              />
-            </button>
 
           </div>
 
@@ -80,7 +53,7 @@ function Hero() {
             <img
               src="/images/hero-room.jpg"
               alt="Warm contemporary living room with natural wood and neutral furniture"
-              className="h-auto w-full object-contain"
+              className="h-auto w-full block"
             />
           </div>
 

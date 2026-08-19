@@ -1,6 +1,6 @@
 const recommendations = [
   {
-    image: '/images/furniture-chair.jpg',
+    image: '/images/products/chair.jpg',
     category: 'SEATING',
     name: 'Luma Lounge Chair',
     material: 'Natural oak · Linen',
@@ -8,7 +8,7 @@ const recommendations = [
     match: '96%',
   },
   {
-    image: '/images/furniture-table.jpg',
+    image: '/images/products/table.jpg',
     category: 'TABLES',
     name: 'Forma Side Table',
     material: 'Solid walnut · Hand-finished',
@@ -16,7 +16,7 @@ const recommendations = [
     match: '92%',
   },
   {
-    image: '/images/furniture-lamp.jpg',
+    image: '/images/products/lamp.jpg',
     category: 'LIGHTING',
     name: 'Sol Floor Lamp',
     material: 'Natural wood · Linen',
@@ -97,12 +97,12 @@ function CuratedRecommendations() {
           {/* Featured recommendation */}
           <article className="group md:col-span-7">
 
-            <div className="relative overflow-hidden bg-[#e8e3da]">
+            <div className="relative overflow-hidden bg-[var(--luma-img-bg)] transition-colors duration-500">
 
               <img
                 src={recommendations[0].image}
                 alt={recommendations[0].name}
-                className="w-full object-contain transition-transform duration-700 ease-out group-hover:scale-[1.025]"
+                className="w-full h-auto block transition-transform duration-700 ease-out group-hover:scale-[1.025]"
               />
 
               <div className="absolute left-5 top-5">
@@ -147,12 +147,12 @@ function CuratedRecommendations() {
                 className="group grid grid-cols-2 gap-5 border-b border-[var(--luma-line)] pb-5"
               >
 
-                <div className="relative overflow-hidden bg-[#e8e3da]">
+                <div className="relative overflow-hidden bg-[var(--luma-img-bg)] transition-colors duration-500">
 
                   <img
                     src={item.image}
                     alt={item.name}
-                    className="w-full object-contain transition-transform duration-700 ease-out group-hover:scale-[1.025]"
+                    className="w-full h-auto block transition-transform duration-700 ease-out group-hover:scale-[1.025]"
                   />
 
                   <div className="absolute left-3 top-3">
@@ -193,25 +193,7 @@ function CuratedRecommendations() {
         </div>
 
 
-        {/* AI insight */}
-        <div className="mt-16 flex flex-col justify-between gap-6 border-t border-[var(--luma-line)] pt-6 md:flex-row md:items-end">
 
-          <div>
-            <p className="text-[9px] uppercase tracking-[0.22em] text-[var(--luma-muted)]">
-              Luma insight
-            </p>
-
-            <p className="mt-2 max-w-xl font-['Cormorant_Garamond'] text-2xl leading-tight md:text-3xl">
-              Natural textures and warm wood complement the light
-              already present in your space.
-            </p>
-          </div>
-
-          <button className="self-start border-b border-[var(--luma-dark)] pb-1 text-xs md:self-auto">
-            Refine my direction
-          </button>
-
-        </div>
 
       </div>
     </section>

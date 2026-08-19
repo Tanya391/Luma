@@ -8,6 +8,17 @@
   --luma-muted: #77716a;
   --luma-line: #d8d2c8;
   --luma-white: #faf9f6;
+  --luma-img-bg: #e8e3da;
+}
+
+body.theme-dark {
+  --luma-cream: #18181b;
+  --luma-dark: #faf9f6;
+  --luma-muted: #a1a1aa;
+  --luma-line: #3f3f46;
+  --luma-white: #09090b;
+  /* Keep image background warm so product JPGs still blend nicely */
+  --luma-img-bg: #d8d2c8;
 }
 
 * {

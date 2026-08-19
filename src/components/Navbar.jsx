@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import { ArrowUpRight, X } from 'lucide-react'
+import { ArrowUpRight, X, Moon, Sun } from 'lucide-react'
 
-function Navbar() {
+function Navbar({ isDark, toggleTheme }) {
   const [menuOpen, setMenuOpen] = useState(false)
 
   const scrollToSection = (id) => {
@@ -59,35 +59,58 @@ function Navbar() {
             </button>
           </div>
 
-          {/* Desktop CTA */}
-          <button
-            onClick={() => scrollToSection('luma-vision')}
-            className="hidden items-center gap-2 border-b border-[var(--luma-dark)] pb-1 text-sm lg:flex"
-          >
-            Design my space
+          {/* Desktop Right Actions */}
+          <div className="hidden items-center gap-6 lg:flex">
+            <button
+              onClick={toggleTheme}
+              className="text-[var(--luma-muted)] transition-colors duration-300 hover:text-[var(--luma-dark)]"
+              aria-label="Toggle theme"
+            >
+              {isDark ? <Sun size={18} strokeWidth={1.5} /> : <Moon size={18} strokeWidth={1.5} />}
+            </button>
 
-            <ArrowUpRight
-              size={15}
-              strokeWidth={1.5}
-            />
-          </button>
+            {/* Desktop CTA */}
+            <button
+              onClick={() => scrollToSection('luma-vision')}
+              className="group flex items-center gap-2 border-b border-[var(--luma-dark)] pb-1 text-sm"
+            >
+              Design my space
 
-          {/* Mobile / tablet menu button */}
-          <button
-            onClick={() => setMenuOpen(!menuOpen)}
-            className="flex h-10 w-10 items-center justify-center lg:hidden"
-            aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
-            aria-expanded={menuOpen}
-          >
-            {menuOpen ? (
-              <X size={23} strokeWidth={1.4} />
-            ) : (
-              <div className="flex flex-col gap-[5px]">
-                <span className="block h-px w-5 bg-[var(--luma-dark)]" />
-                <span className="block h-px w-5 bg-[var(--luma-dark)]" />
-              </div>
-            )}
-          </button>
+              <ArrowUpRight
+                size={15}
+                strokeWidth={1.5}
+                className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+              />
+            </button>
+          </div>
+
+          {/* Mobile Right Actions */}
+          <div className="flex items-center gap-5 lg:hidden">
+            <button
+              onClick={toggleTheme}
+              className="text-[var(--luma-muted)] transition-colors duration-300 hover:text-[var(--luma-dark)]"
+              aria-label="Toggle theme"
+            >
+              {isDark ? <Sun size={20} strokeWidth={1.5} /> : <Moon size={20} strokeWidth={1.5} />}
+            </button>
+
+            {/* Mobile / tablet menu button */}
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="flex h-10 w-10 items-center justify-end"
+              aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+              aria-expanded={menuOpen}
+            >
+              {menuOpen ? (
+                <X size={23} strokeWidth={1.4} />
+              ) : (
+                <div className="flex flex-col gap-[5px]">
+                  <span className="block h-px w-5 bg-[var(--luma-dark)]" />
+                  <span className="block h-px w-5 bg-[var(--luma-dark)]" />
+                </div>
+              )}
+            </button>
+          </div>
         </nav>
       </header>
 

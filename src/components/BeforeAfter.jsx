@@ -98,36 +98,19 @@ function BeforeAfter() {
 
         <div
           ref={containerRef}
-          className="
-            relative
-            w-full
-            overflow-hidden
-            select-none
-            touch-none
-            bg-[#e8e3da]
-          "
-          style={{
-            aspectRatio: '1264 / 811',
-          }}
+          className="relative w-full overflow-hidden select-none touch-none bg-[var(--luma-img-bg)] transition-colors duration-500"
         >
 
           {/* -------------------------------------------------
               AFTER IMAGE
               This is the permanent background.
-              It never moves or resizes.
+              It dictates the container's height naturally.
           -------------------------------------------------- */}
 
           <img
             src="/images/after-room.jpg"
             alt="Luma vision of the room"
-            className="
-              absolute
-              inset-0
-              h-full
-              w-full
-              object-fill
-              pointer-events-none
-            "
+            className="w-full h-auto block pointer-events-none"
             draggable="false"
           />
 
@@ -139,55 +122,15 @@ function BeforeAfter() {
           -------------------------------------------------- */}
 
           <div
-            className="
-              absolute
-              inset-y-0
-              left-0
-              overflow-hidden
-            "
-            style={{
-              width: `${position}%`,
-            }}
+            className="absolute inset-0 pointer-events-none"
+            style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
           >
-
             <img
               src="/images/before-room.jpg"
               alt="Original room before Luma"
-              className="
-                absolute
-                left-0
-                top-0
-                h-full
-                w-full
-                max-w-none
-                object-fill
-                pointer-events-none
-              "
+              className="absolute inset-0 w-full h-full object-cover block"
               draggable="false"
             />
-
-          </div>
-
-
-          {/* -------------------------------------------------
-              YOUR SPACE LABEL
-          -------------------------------------------------- */}
-
-          <div className="pointer-events-none absolute left-5 top-5 z-20 md:left-7 md:top-7">
-            <span className="bg-[var(--luma-cream)] px-3 py-2 text-[9px] uppercase tracking-[0.2em] text-[var(--luma-dark)]">
-              Your space
-            </span>
-          </div>
-
-
-          {/* -------------------------------------------------
-              LUMA VISION LABEL
-          -------------------------------------------------- */}
-
-          <div className="pointer-events-none absolute right-5 top-5 z-20 md:right-7 md:top-7">
-            <span className="bg-[var(--luma-dark)] px-3 py-2 text-[9px] uppercase tracking-[0.2em] text-[var(--luma-cream)]">
-              Luma vision
-            </span>
           </div>
 
 

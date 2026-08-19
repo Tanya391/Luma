@@ -39,11 +39,11 @@ function ShopTheLook() {
             <div key={product.id} className="group cursor-pointer">
 
               {/* Image */}
-              <div className="aspect-[4/5] overflow-hidden bg-[#e8e3da]">
+              <div className="aspect-square relative overflow-hidden bg-[var(--luma-img-bg)] transition-colors duration-500">
                 <img
                   src={product.image}
                   alt={product.name}
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                  className="w-full h-full object-contain mix-blend-darken transition-transform duration-700 group-hover:scale-[1.03] p-4"
                 />
               </div>
 
