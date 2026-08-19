@@ -26,10 +26,10 @@ function Navbar({ isDark, toggleTheme }) {
       <header className="relative z-50 px-6 py-6 md:px-10 lg:px-14">
         <nav className="mx-auto flex max-w-[1440px] items-center justify-between">
           
-          {/* Luma wordmark */}
+          {/* Luma wordmark logo */}
           <button
             onClick={goHome}
-            className="font-['Cormorant_Garamond'] text-[2.1rem] font-medium leading-none tracking-[-0.05em]"
+            className="font-['Cormorant_Garamond'] text-2xl font-bold uppercase tracking-[0.2em] leading-none"
             aria-label="Luma home"
           >
             Luma

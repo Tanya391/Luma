@@ -6,7 +6,6 @@ import CuratedRecommendations from './components/CuratedRecommendations'
 import ShopTheLook from './components/ShopTheLook'
 import AskLuma from './components/AskLuma'
 import AboutLuma from './components/AboutLuma'
-import FinalCTA from './components/FinalCTA'
 import Footer from './components/Footer'
 
 const KONAMI_CODE = [
@@ -38,12 +37,14 @@ function App() {
       if (e.key === KONAMI_CODE[konamiIndex]) {
         konamiIndex++
         if (konamiIndex === KONAMI_CODE.length) {
-          // Trigger the extremely smooth 360 spin animation
-          document.body.classList.add('barrel-roll')
+          // Set transform origin to the exact center of the current viewport
+          document.body.style.transformOrigin = `50% ${window.scrollY + window.innerHeight / 2}px`
+          document.body.classList.add('page-spin')
           
           setTimeout(() => {
-            document.body.classList.remove('barrel-roll')
-          }, 1500)
+            document.body.classList.remove('page-spin')
+            document.body.style.transformOrigin = ''
+          }, 1000)
 
           konamiIndex = 0
         }
@@ -67,7 +68,6 @@ function App() {
         <ShopTheLook />
         <AskLuma />
         <AboutLuma />
-        <FinalCTA />
       </main>
 
       <Footer />

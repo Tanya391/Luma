@@ -34,19 +34,19 @@ function ShopTheLook() {
         </div>
 
         {/* Product grid / Horizontal scroll on all devices */}
-        <div className="flex flex-nowrap overflow-x-auto snap-x snap-mandatory gap-6 pb-6">
+        <div className="flex flex-nowrap overflow-x-auto snap-x snap-mandatory gap-6 pb-6 scrollbar-hide">
           {products.map((product) => (
             <div 
               key={product.id} 
-              className="group cursor-pointer w-full shrink-0 snap-start sm:w-[calc(50%-0.75rem)] lg:w-[calc(25%-1.125rem)]"
+              className="group cursor-pointer w-full shrink-0 snap-start sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]"
             >
 
               {/* Image */}
-              <div className="aspect-square relative overflow-hidden bg-[var(--luma-img-bg)] transition-colors duration-500">
+              <div className="aspect-[3/2] relative overflow-hidden bg-[var(--luma-line)]/20 transition-colors duration-500">
                 <img
                   src={product.image}
                   alt={product.name}
-                  className="w-full h-full object-contain mix-blend-darken transition-transform duration-700 group-hover:scale-[1.03] p-4"
+                  className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03] ${product.position || 'object-center'}`}
                 />
               </div>
 

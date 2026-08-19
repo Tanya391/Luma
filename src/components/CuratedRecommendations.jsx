@@ -4,7 +4,7 @@ const recommendations = [
     category: 'SEATING',
     name: 'Luma Lounge Chair',
     material: 'Natural oak · Linen',
-    price: '₹24,800',
+    price: '$2,480',
     match: '96%',
   },
   {
@@ -12,7 +12,7 @@ const recommendations = [
     category: 'SEATING',
     name: 'Aero Lounge Chair',
     material: 'Premium leather · Steel frame',
-    price: '₹32,000',
+    price: '$3,200',
     match: '92%',
   },
   {
@@ -20,7 +20,7 @@ const recommendations = [
     category: 'LIGHTING',
     name: 'Sol Floor Lamp',
     material: 'Natural wood · Linen',
-    price: '₹12,600',
+    price: '$1,260',
     match: '89%',
   },
 ]
@@ -95,7 +95,7 @@ function CuratedRecommendations() {
         <div className="grid gap-5 md:grid-cols-12">
 
           {/* Featured recommendation */}
-          <article className="group md:col-span-7">
+          <article className="group cursor-pointer md:col-span-7">
 
             <div className="aspect-[4/5] relative overflow-hidden bg-[var(--luma-img-bg)] transition-colors duration-500">
 
@@ -144,7 +144,7 @@ function CuratedRecommendations() {
             {recommendations.slice(1).map((item) => (
               <article
                 key={item.name}
-                className="group grid grid-cols-2 gap-5 border-b border-[var(--luma-line)] pb-5"
+                className="group cursor-pointer grid grid-cols-2 gap-5 border-b border-[var(--luma-line)] pb-5"
               >
 
                 <div className="aspect-[4/5] relative overflow-hidden bg-[var(--luma-img-bg)] transition-colors duration-500">
@@ -163,23 +163,21 @@ function CuratedRecommendations() {
 
                 </div>
 
-                <div className="flex flex-col justify-between py-1">
+                <div className="flex flex-col py-1">
 
-                  <div>
-                    <p className="mb-2 text-[9px] uppercase tracking-[0.2em] text-[var(--luma-muted)]">
-                      {item.category}
-                    </p>
+                  <p className="mb-2 text-[9px] uppercase tracking-[0.2em] text-[var(--luma-muted)]">
+                    {item.category}
+                  </p>
 
-                    <h3 className="font-['Cormorant_Garamond'] text-2xl leading-none">
-                      {item.name}
-                    </h3>
+                  <h3 className="font-['Cormorant_Garamond'] text-2xl leading-none">
+                    {item.name}
+                  </h3>
 
-                    <p className="mt-2 text-xs leading-5 text-[var(--luma-muted)]">
-                      {item.material}
-                    </p>
-                  </div>
+                  <p className="mt-2 text-xs leading-5 text-[var(--luma-muted)]">
+                    {item.material}
+                  </p>
 
-                  <p className="text-sm">
+                  <p className="mt-6 text-sm">
                     {item.price}
                   </p>
 

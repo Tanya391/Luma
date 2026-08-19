@@ -25,87 +25,54 @@ function AboutLuma() {
   return (
     <section
       id="about"
-      className="px-6 py-6 md:px-10 md:py-10 lg:px-14"
+      className="px-6 py-12 md:px-10 lg:px-14 border-y border-[var(--luma-line)]"
     >
-      <div className="mx-auto max-w-5xl">
+      <div className="mx-auto max-w-7xl">
 
-        {/* Section intro */}
-        <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
-
+        <div className="grid gap-12 lg:grid-cols-[1fr_2fr] lg:gap-20 items-start">
+          
+          {/* Left: Punchy Title */}
           <div>
             <div className="mb-4 flex items-center gap-4">
-              <span className="h-px w-10 bg-[var(--luma-dark)]" />
-
-              <span className="text-[10px] uppercase tracking-[0.28em] text-[var(--luma-muted)]">
+              <span className="h-px w-8 bg-[var(--luma-dark)]" />
+              <span className="text-[9px] uppercase tracking-[0.28em] text-[var(--luma-muted)]">
                 The Luma approach
               </span>
             </div>
-
-            <h2 className="font-['Cormorant_Garamond'] text-5xl leading-[0.9] tracking-[-0.045em] sm:text-6xl md:text-6xl">
+            
+            <h2 className="font-['Cormorant_Garamond'] text-5xl leading-[0.9] tracking-[-0.04em] sm:text-6xl">
               Furniture that starts
               <br />
-              <em>with the room.</em>
+              <em className="text-[var(--luma-muted)]">with the room.</em>
             </h2>
+
+            <button
+              onClick={() =>
+                document.getElementById('luma-vision')?.scrollIntoView({ behavior: 'smooth' })
+              }
+              className="group mt-10 flex w-fit items-center gap-2 border-b border-[var(--luma-dark)] pb-1 text-xs uppercase tracking-widest transition-opacity hover:opacity-70"
+            >
+              Ask Luma
+              <ArrowUpRight size={14} strokeWidth={1.5} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+            </button>
           </div>
 
-          <p className="max-w-md text-sm leading-6 text-[var(--luma-muted)] lg:pb-1">
-            Luma brings an AI-led approach to furniture discovery,
-            helping you move from an empty space to a considered
-            interior direction without starting with a catalogue.
-          </p>
-
-        </div>
-
-        {/* Principles */}
-        <div className="mt-8 border-t border-[var(--luma-line)]">
-
-          {principles.map((item) => (
-            <div
-              key={item.number}
-              className="grid gap-4 border-b border-[var(--luma-line)] py-6 md:grid-cols-[80px_1fr_1fr] md:items-start md:py-8"
-            >
-
-              <span className="text-[10px] tracking-[0.2em] text-[var(--luma-muted)]">
-                {item.number}
-              </span>
-
-              <h3 className="font-['Cormorant_Garamond'] text-3xl leading-none md:text-3xl">
-                {item.title}
-              </h3>
-
-              <p className="max-w-md text-sm leading-6 text-[var(--luma-muted)] md:justify-self-end">
-                {item.description}
-              </p>
-
-            </div>
-          ))}
-
-        </div>
-
-        {/* Closing statement */}
-        <div className="mt-10 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-
-          <p className="max-w-2xl font-['Cormorant_Garamond'] text-3xl leading-tight md:text-3xl">
-            A more personal way to discover furniture,
-            <em> shaped around the way you live.</em>
-          </p>
-
-          <button
-            onClick={() =>
-              document
-                .getElementById('luma-vision')
-                ?.scrollIntoView({ behavior: 'smooth' })
-            }
-            className="group flex w-fit items-center gap-2 border-b border-[var(--luma-dark)] pb-1 text-sm"
-          >
-            Ask Luma
-
-            <ArrowUpRight
-              size={15}
-              strokeWidth={1.4}
-              className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
-            />
-          </button>
+          {/* Right: Compact 3-Column Grid */}
+          <div className="grid gap-8 sm:grid-cols-3">
+            {principles.map((item) => (
+              <div key={item.number} className="flex flex-col gap-3">
+                <span className="text-[10px] tracking-[0.2em] font-medium text-[var(--luma-dark)]">
+                  {item.number}
+                </span>
+                <h3 className="font-['Cormorant_Garamond'] text-2xl leading-none">
+                  {item.title}
+                </h3>
+                <p className="text-xs leading-5 text-[var(--luma-muted)]">
+                  {item.description}
+                </p>
+              </div>
+            ))}
+          </div>
 
         </div>
 

@@ -37,12 +37,20 @@ function Hero() {
             </h1>
 
             {/* Bottom content */}
-            <div className="mt-10 flex items-end justify-between gap-8 lg:mt-14">
+            <div className="mt-10 flex flex-col items-start gap-8 lg:mt-14 lg:flex-row lg:items-end lg:justify-between">
 
-              <p className="max-w-[480px] text-[13px] leading-6 tracking-[-0.01em] text-[var(--luma-muted)] sm:text-sm">
+              <p className="max-w-[340px] text-[13px] leading-6 tracking-[-0.01em] text-[var(--luma-muted)] sm:text-sm">
                 AI-curated furniture that fits your space,
                 your style, your life.
               </p>
+
+              <button 
+                onClick={scrollToDemo}
+                className="group flex items-center gap-3 bg-[var(--luma-dark)] text-[var(--luma-cream)] px-8 py-4 text-[10px] font-medium uppercase tracking-[0.2em] transition-all hover:opacity-80"
+              >
+                Design my space
+                <ArrowUpRight size={16} strokeWidth={1.5} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+              </button>
 
             </div>
 

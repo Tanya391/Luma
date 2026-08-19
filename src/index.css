@@ -58,13 +58,20 @@ img {
   color: var(--luma-cream);
 }
 
-@keyframes barrelRoll {
-  0% { transform: perspective(1000px) rotateZ(0deg) scale(1); }
-  50% { transform: perspective(1000px) rotateZ(180deg) scale(0.5); border-radius: 50px; }
-  100% { transform: perspective(1000px) rotateZ(360deg) scale(1); }
+@keyframes pageSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
-.barrel-roll {
-  animation: barrelRoll 1.5s cubic-bezier(0.45, 0, 0.15, 1);
+.page-spin {
+  animation: pageSpin 1s cubic-bezier(0.45, 0, 0.15, 1);
   overflow: hidden;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
