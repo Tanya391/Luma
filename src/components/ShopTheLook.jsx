@@ -33,10 +33,13 @@ function ShopTheLook() {
 
         </div>
 
-        {/* Product grid */}
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {/* Product grid / Horizontal scroll on all devices */}
+        <div className="flex flex-nowrap overflow-x-auto snap-x snap-mandatory gap-6 pb-6">
           {products.map((product) => (
-            <div key={product.id} className="group cursor-pointer">
+            <div 
+              key={product.id} 
+              className="group cursor-pointer w-full shrink-0 snap-start sm:w-[calc(50%-0.75rem)] lg:w-[calc(25%-1.125rem)]"
+            >
 
               {/* Image */}
               <div className="aspect-square relative overflow-hidden bg-[var(--luma-img-bg)] transition-colors duration-500">

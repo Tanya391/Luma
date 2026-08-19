@@ -8,11 +8,11 @@ const recommendations = [
     match: '96%',
   },
   {
-    image: '/images/products/table.jpg',
-    category: 'TABLES',
-    name: 'Forma Side Table',
-    material: 'Solid walnut · Hand-finished',
-    price: '₹18,400',
+    image: '/images/products/loungechair.jpg',
+    category: 'SEATING',
+    name: 'Aero Lounge Chair',
+    material: 'Premium leather · Steel frame',
+    price: '₹32,000',
     match: '92%',
   },
   {
@@ -97,12 +97,12 @@ function CuratedRecommendations() {
           {/* Featured recommendation */}
           <article className="group md:col-span-7">
 
-            <div className="relative overflow-hidden bg-[var(--luma-img-bg)] transition-colors duration-500">
+            <div className="aspect-[4/5] relative overflow-hidden bg-[var(--luma-img-bg)] transition-colors duration-500">
 
               <img
                 src={recommendations[0].image}
                 alt={recommendations[0].name}
-                className="w-full h-auto block transition-transform duration-700 ease-out group-hover:scale-[1.025]"
+                className="w-full h-full object-cover block transition-transform duration-700 ease-out group-hover:scale-[1.025]"
               />
 
               <div className="absolute left-5 top-5">
@@ -147,12 +147,12 @@ function CuratedRecommendations() {
                 className="group grid grid-cols-2 gap-5 border-b border-[var(--luma-line)] pb-5"
               >
 
-                <div className="relative overflow-hidden bg-[var(--luma-img-bg)] transition-colors duration-500">
+                <div className="aspect-[4/5] relative overflow-hidden bg-[var(--luma-img-bg)] transition-colors duration-500">
 
                   <img
                     src={item.image}
                     alt={item.name}
-                    className="w-full h-auto block transition-transform duration-700 ease-out group-hover:scale-[1.025]"
+                    className="w-full h-full object-cover block transition-transform duration-700 ease-out group-hover:scale-[1.025]"
                   />
 
                   <div className="absolute left-3 top-3">

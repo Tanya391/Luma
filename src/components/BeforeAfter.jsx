@@ -178,6 +178,7 @@ function BeforeAfter() {
                 justify-center
                 rounded-full
                 bg-white
+                text-black
                 shadow-lg
                 outline-none
                 transition-transform

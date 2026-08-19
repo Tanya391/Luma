@@ -38,7 +38,13 @@ function App() {
       if (e.key === KONAMI_CODE[konamiIndex]) {
         konamiIndex++
         if (konamiIndex === KONAMI_CODE.length) {
-          setIsDark(prev => !prev)
+          // Trigger the extremely smooth 360 spin animation
+          document.body.classList.add('barrel-roll')
+          
+          setTimeout(() => {
+            document.body.classList.remove('barrel-roll')
+          }, 1500)
+
           konamiIndex = 0
         }
       } else {
