@@ -1,9 +1,6 @@
 # Luma — Premium AI Furniture Discovery
 
-> **Part 2 — The Premium Home Page Assessment**
-
 Luma is a concept for an AI-powered furniture discovery platform that helps people find pieces that fit **their space, their style, and their life**.
-
 Instead of making users browse an endless catalogue of isolated product images, Luma starts with the user's room and uses that context to create a more personalized furniture discovery experience.
 
 The homepage was designed around one goal:
